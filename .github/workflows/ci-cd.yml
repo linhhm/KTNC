@@ -3,7 +3,7 @@ name: CI/CD Pipeline
 on:
   push:
     branches:
-      - master  # Hoặc main nếu branch mặc định là main
+      - master
   pull_request:
     branches:
       - master
@@ -28,9 +28,11 @@ jobs:
       - name: Run Unit Tests
         run: mvn test
 
+      - name: Verify test results
+        run: ls -la target/surefire-reports/
+
       - name: Upload test results
         uses: actions/upload-artifact@v4
         with:
           name: test-results
-          path: results/
-
+          path: target/surefire-reports/
