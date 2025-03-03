@@ -7,13 +7,9 @@ import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
 @Setter
+@Getter
 public class SinhVien {
-    private String maSV;
-    private int tuoi;
-    private float diemTB;
-    private int kyHoc;
+    private int id;
     private String ten;
-    private String chuyenNganh;
 }
